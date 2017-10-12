@@ -1,12 +1,27 @@
+// NPM
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  Alert,
+  StyleSheet,
+  View,
+  TouchableOpacity
+} from 'react-native';
+
+// Local
+import PartyParrot from './components/PartyParrot/partyParrot';
 
 export default class App extends React.Component {
+  _onPress() {
+    Alert.alert('you did the thing');
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+        <View style={styles.container}>
+          <TouchableOpacity onPress={this._onPress}>
+            <PartyParrot />
+          </TouchableOpacity>
+        </View>
     );
   }
 }
