@@ -4,9 +4,13 @@ import { Image, Text } from 'react-native';
 
 export default class PartyParrot extends React.Component {
   render() {
-
-    // thank god for python eh
+    // thank god for python eh:
+    // for i in range(1,84):
+    //   print("parrot"+str(i)+": require('../../assets/Parrots/"+str(i)+".gif'),")
+    //
     // you a real piece of work for this one react native
+    // if you're wondering why I had to do this:
+    //   https://github.com/facebook/react-native/issues/2481
     const PARROTS = {
       parrot1: require('../../assets/Parrots/1.gif'),
       parrot2: require('../../assets/Parrots/2.gif'),
@@ -94,7 +98,6 @@ export default class PartyParrot extends React.Component {
     }
 
     const randomNum = Math.floor(Math.random() * 83);
-    console.log(randomNum)
 
     return (
       <Image source={PARROTS[`parrot${randomNum}`]} />
