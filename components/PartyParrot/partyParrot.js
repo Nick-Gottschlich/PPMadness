@@ -1,6 +1,6 @@
 // NPM
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { Image } from 'react-native';
 import resolveAssetSource from 'resolveAssetSource';
 
 // thank god for python eh:
@@ -99,6 +99,9 @@ const PARROTS = {
 export default class PartyParrot extends React.Component {
   _parrotStyle(parrotNum) {
     // React Native is totally lame so none of this works
+    // Otherwise I would like to be able to calculate image size to better place
+    // parrots on touch
+    //
     // Image.getSize('../../assets/Parrots/83.gif', (width, height) => {
     //   console.log("width ", width)
     //   console.log("height ", height)
@@ -117,9 +120,6 @@ export default class PartyParrot extends React.Component {
   }
 
   render() {
-    console.log(this.props.locationX)
-    console.log(this.props.locationY)
-
     const randomNum = Math.floor(Math.random() * 83);
 
     return (
@@ -129,13 +129,3 @@ export default class PartyParrot extends React.Component {
     )
   }
 }
-
-// const styles = StyleSheet.create({
-//   parrot: {
-//     // flex: 1,
-//     // alignItems: 'center',
-//     // justifyContent: 'center',
-//     top: 75,
-//     // right: 75,
-//   }
-// });
