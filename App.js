@@ -60,8 +60,10 @@ export default class App extends React.Component {
         <View style={styles.container}>
           {console.log("locationX", this.state.locationX)}
           {console.log("locationY", this.state.locationY)}
-          <View style={styles.parrot}>
-            <PartyParrot />
+          <View>
+            <PartyParrot
+              locationX={this.state.locationX}
+              locationY={this.state.locationY} />
           </View>
         </View>
       </TouchableNativeFeedback>
@@ -78,11 +80,11 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     // justifyContent: 'center',
   },
-  parrot: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    // top: 75,
-    // right: 200,
-  }
+  // parrot: {
+  //   flex: 1,
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   top: this.state.locationX,
+  //   right: this.state.locationY,
+  // }
 });
